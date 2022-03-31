@@ -9,7 +9,7 @@ router.post("/",(req,res)=>{
     try{
 
         //even though we alredy said what we needed in schema this is for more accuracy
-    const user= new Menfootwear.create(
+    const user=Menfootwear.create(
         // name:req.body.name,
         // image:req.body.image,
         // mrp:req.body.mrp,

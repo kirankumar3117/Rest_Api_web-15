@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 
-const womenethicwearSchema=new mongoose.Schema({
+const kidsclothingSchema=new mongoose.Schema({
     name:{type:String,required:true},
     image:{type:String,required:true},
     mrp:{type:Number,required:true},
@@ -8,11 +8,9 @@ const womenethicwearSchema=new mongoose.Schema({
     rs:{type:Number,required:true},
     star:{type:Number,required:true},
 
-},{
-    versionKey:false
 });
 
-const womenethicwear= mongoose.model("womenethicwear",womenethicwearSchema);
+const kidsclothing= mongoose.model("kidsclothing",kidsclothingSchema);
 
-module.exports=womenethicwear;
+module.exports=kidsclothing;
 

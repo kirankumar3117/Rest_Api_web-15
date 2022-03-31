@@ -2,14 +2,14 @@ const express=require("express");
 
 const router=express.Router();
 
-const Womenwatch=require("../../model/women.model/women.watch.model")
+const Kidsclothing=require("../../model/kids.model/kids.clothing.model")
 
 
 router.post("/",(req,res)=>{
     try{
 
         //even though we alredy said what we needed in schema this is for more accuracy
-    const user=Womenwatch.create(
+    const user=Kidsclothing.create(
         // name:req.body.name,
         // image:req.body.image,
         // mrp:req.body.mrp,
@@ -29,7 +29,7 @@ router.post("/",(req,res)=>{
 
 router.delete("/:id",async(req,res)=>{
     try{
-        const user=await Womenwatch.findByIdAndDelete(req.params.id);
+        const user=await Kidsclothing.findByIdAndDelete(req.params.id);
         res.status(200).send(user)
     }catch(err){
         console.log({message:err.message})
@@ -44,14 +44,14 @@ router.get("/", async (req, res) => {
       const pagesize = req.query.pagesize || 25; 
   
       const skip = (page - 1) * pagesize;
-      const user = await Womenwatch.find()
+      const user = await Kidsclothing.find()
         .skip(skip) 
         .limit(pagesize) 
         .lean()
         .exec();
   
       const totalPages = Math.ceil(
-        (await Womenwatch.find().countDocuments()) / pagesize);
+        (await Kidsclothing.find().countDocuments()) / pagesize);
   
       return res.status(200).send(user);
     } catch (err) {

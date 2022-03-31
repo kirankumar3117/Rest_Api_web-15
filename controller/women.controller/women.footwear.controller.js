@@ -2,26 +2,24 @@ const express=require("express");
 
 const router=express.Router();
 
-const womenfootwear=require("../../model/men.model/men.footwear")
+const Womenfootwear=require("../../model/women.model/women.footwear.model")
 
 
 router.post("/",(req,res)=>{
     try{
 
         //even though we alredy said what we needed in schema this is for more accuracy
-    const user= new womenfootwear.create(
-        // name:req.body.name,
-        // image:req.body.image,
-        // mrp:req.body.mrp,
-        // discount:req.body.discount,
-        // rs:req.body.rs,
-        // star:req.body.star
-        req.body
-    );
+    const user= Womenfootwear.create(req.body,{new:true});
    // user.save();
+   
+// const user=ScrapProducts()
+// .then(mapToModel)
+// .then(function(data) {
+//   return Product.create(data)
+// })
     res.status(200).send(user)
 }catch(err){
-    res.status(400).send("somthing is missing in post body" , {message:err.message})
+    res.status(400).send({message:err.message})
 }
 
 
@@ -29,7 +27,7 @@ router.post("/",(req,res)=>{
 
 router.delete("/:id",async(req,res)=>{
     try{
-        const user=await womenfootwear.findByIdAndDelete(req.params.id);
+        const user=await Womenfootwear.findByIdAndDelete(req.params.id);
         res.status(200).send(user)
     }catch(err){
         console.log({message:err.message})
@@ -44,14 +42,14 @@ router.get("/", async (req, res) => {
       const pagesize = req.query.pagesize || 25; 
   
       const skip = (page - 1) * pagesize;
-      const user = await womenfootwear.find()
+      const user = await Womenfootwear.find()
         .skip(skip) 
         .limit(pagesize) 
         .lean()
         .exec();
   
       const totalPages = Math.ceil(
-        (await womenfootwear.find().countDocuments()) / pagesize);
+        (await Womenfootwear.find().countDocuments()) / pagesize);
   
       return res.status(200).send(user);
     } catch (err) {
