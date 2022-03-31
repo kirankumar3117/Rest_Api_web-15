@@ -8,6 +8,8 @@ const homeSchema=new mongoose.Schema({
     rs:{type:Number,required:true},
     star:{type:Number,required:true},
 
+},{
+    versionKey:false
 });
 
 const home= mongoose.model("home",homeSchema);

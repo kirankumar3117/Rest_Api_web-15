@@ -8,6 +8,8 @@ const womenwatchSchema=new mongoose.Schema({
     rs:{type:Number,required:true},
     star:{type:Number,required:true},
 
+},{
+    versionKey:false
 });
 
 const womenwatch= mongoose.model("womenwatch",womenwatchSchema);

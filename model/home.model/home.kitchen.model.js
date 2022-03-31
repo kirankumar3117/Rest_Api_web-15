@@ -8,6 +8,8 @@ const homekitchenSchema=new mongoose.Schema({
     rs:{type:Number,required:true},
     star:{type:Number,required:true},
 
+},{
+    versionKey:false
 });
 
 const homekitchen= mongoose.model("homekitchen",homekitchenSchema);
