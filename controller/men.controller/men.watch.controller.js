@@ -22,4 +22,13 @@ router.post("/men/watch",(req,res)=>{
 }
 
 
+});
+
+router.get("men/watch",async(req,res)=>{
+    try{
+        const user=await find().lean().exec();
+        res.status(200).send(user)
+    }catch(err){
+        console.log("get request denied",{message:err.message})
+    }
 })
