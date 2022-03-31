@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 
-const menswatchesSchema=new mongoose.Schema({
+const womenethicwearSchema=new mongoose.Schema({
     name:{type:String,required:true},
     image:{type:String,required:true},
     mrp:{type:Number,required:true},
@@ -10,7 +10,7 @@ const menswatchesSchema=new mongoose.Schema({
 
 });
 
-const Menswatches= mongoose.model("menwatch",menswatchesSchema);
+const womenethicwear= mongoose.model("womenethicwear",womenethicwearSchema);
 
-module.exports=Menswatches;
+module.exports=womenethicwear;
 
