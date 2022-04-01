@@ -1,10 +1,14 @@
 const express=require("express");
-
+var cors = require('cors')
 const router=express.Router();
 
 const Menclothing=require("../../model/men.model/men.clothing.model")
 
-
+var corsOptions = {
+  origin: 'https://obscure-journey-64084.herokuapp.com/men',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+ 
 router.post("/",(req,res)=>{
     try{
 
@@ -36,7 +40,7 @@ router.delete("/:id",async(req,res)=>{
     }
 })
 
-router.get("/", async (req, res) => {
+router.get("/", cors(corsOptions),async (req, res) => {
     try {
      
   
