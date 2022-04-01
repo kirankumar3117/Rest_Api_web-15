@@ -22,9 +22,9 @@ const KidsClothingController=require("./controller/kids.controller/kids.clothing
 const BeautyController=require("./controller/beauty.controller");
 const RandomController=require("./controller/random.controller");
 
-app.use("/men",MenWatchController)
+app.use("/men/perfume",MenWatchController)
 app.use("/men/footwear",MenFootwearController)
-app.use("/men/clothing",MenClothingController)
+app.use("/men",MenClothingController)
 app.use("/women/ethicwear",WomenEthicWearController)
 app.use("/women",WomenFootWearController)
 
