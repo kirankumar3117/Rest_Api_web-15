@@ -12,7 +12,7 @@ const menswatchesSchema=new mongoose.Schema({
     versionKey:false
 });
 
-const Menswatches= mongoose.model("menwatch",menswatchesSchema);
+const Menswatches= mongoose.model("mensperfume",menswatchesSchema);
 
 module.exports=Menswatches;
 

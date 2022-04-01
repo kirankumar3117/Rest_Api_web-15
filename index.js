@@ -22,16 +22,18 @@ const KidsClothingController=require("./controller/kids.controller/kids.clothing
 const BeautyController=require("./controller/beauty.controller");
 const RandomController=require("./controller/random.controller");
 
-app.use("/men/watch",MenWatchController)
+app.use("/men",MenWatchController)
 app.use("/men/footwear",MenFootwearController)
 app.use("/men/clothing",MenClothingController)
 app.use("/women/ethicwear",WomenEthicWearController)
-app.use("/women/footwear",WomenFootWearController)
-app.use("/women/watch",WomenWatchController)
+app.use("/women",WomenFootWearController)
+
+//changed to watch - perfume cause we don't have any data on watches
+app.use("/women/perfume",WomenWatchController)
 app.use("/home",HomeController)
 app.use("/home/kitchen",HomeKitchenController)
 app.use("/kid/toy",KidsToysController)
-app.use("/kid/clothing",KidsClothingController)
+app.use("/kid",KidsClothingController)
 app.use("/beauty",BeautyController)
 app.use("/random",RandomController)
 
