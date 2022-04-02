@@ -12,7 +12,7 @@ const beautySchema=new mongoose.Schema({
     versionKey:false
 });
 
-const beauty= mongoose.model("beauty",beautySchema);
+const beauty= mongoose.model("beautie",beautySchema);
 
 module.exports=beauty;
 
